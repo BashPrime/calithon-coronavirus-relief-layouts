@@ -1,0 +1,22 @@
+{
+    "name": "calithon-coronavirus-relief-layouts",
+    "version": "1.0.0",
+    "description": "Calithon Coronavirus Relief marathon layouts using NodeCG + Speedcontrol",
+    "homepage": "https://twitter.com/CalithonSR",
+    "author": "BashPrime",
+    "dependencies": {},
+    "nodecg": {
+      "compatibleRange": "^1.0.0",
+      "dependencies": [
+        "speedcontrol/nodecg-speedcontrol:>=0.9"
+      ],
+      "graphics": [
+        {
+          "file": "game-layout.html",
+          "width": 1920,
+          "height": 1080
+        }
+      ]
+    },
+    "license": "MIT"
+  }

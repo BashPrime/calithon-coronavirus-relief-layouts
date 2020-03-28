@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+
+  <!-- CSS -->
+  <link href="css/common.css" rel="stylesheet" />
+
+  <!-- JavaScript -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="js/run-info.js"></script>
+
+  <script>
+    let isOffline = false;
+  </script>
+</head>
+
+<body>
+  <!--Runner details.-->
+  <div class="runner-details" id="runner-details1">
+    <div class="runner-name" id="runner-name1"></div>
+    <div class="pronouns" id="pronouns1"></div>
+    <div class="finish-time" id="finish-time1"></div>
+  </div>
+  <div class="runner-details" id="runner-details2">
+    <div class="runner-name" id="runner-name2"></div>
+    <div class="pronouns" id="pronouns2"></div>
+    <div class="finish-time" id="finish-time2"></div>
+  </div>
+  <div class="runner-details" id="runner-details3">
+    <div class="runner-name" id="runner-name3"></div>
+    <div class="pronouns" id="pronouns3"></div>
+    <div class="finish-time" id="finish-time3"></div>
+  </div>
+  <div class="runner-details" id="runner-details4">
+    <div class="runner-name" id="runner-name4"></div>
+    <div class="pronouns" id="pronouns4"></div>
+    <div class="finish-time" id="finish-time4"></div>
+  </div>
+
+  <!--Game details.-->
+  <div id="game-details">
+    <div id="game-name"></div>
+    <div class="game-detail-container" id="category-container">
+      <span class="game-detail-label" id="category-label">Category:</span>
+      <span class="game-detail" id="category"></span>
+    </div>
+    <div class="game-detail-container" id="platform-container">
+      <span class="game-detail-label" id="platform-label">System:</span>
+      <span class="game-detail" id="platform"></span>
+    </div>
+    <div class="game-detail-container" id="year-container">
+      <span class="game-detail-label" id="year-label">Released:</span>
+      <span class="game-detail" id="year"></span>
+    </div>
+    <div class="game-detail-container" id="estimate-container">
+      <span class="game-detail-label" id="estimate-label">Estimate:</span>
+      <span class="game-detail" id="estimate"></span>
+    </div>
+  </div>
+
+  <!-- Timer -->
+  <div if="timer-label">Time:</div>
+  <div id="timer"></div>
+
+  <!-- <span id="player"></span> -->
+</body>
+
+</html>
