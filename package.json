@@ -12,7 +12,7 @@
       ],
       "graphics": [
         {
-          "file": "game-layout.html",
+          "file": "4x3-1player.html",
           "width": 1920,
           "height": 1080
         }
