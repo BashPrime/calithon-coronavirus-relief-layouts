@@ -1,8 +1,39 @@
-html {
-	font-family: 'Arial';
+@font-face {
+	font-family: Economica;
+	src: url('../fonts/Economica-Regular_0.ttf');
+}
+
+@font-face {
+	font-family: 'Economica Bold';
+	src: url('../fonts/Economica-Bold_0.ttf');
 }
 
 body {
+	font-family: 'Economica';
+	color: #f9f9f9;
+	position: absolute;
 	padding: 0;
 	margin: 0;
+	width: 1280px;
+	height: 720px;
+}
+
+#directrelief-logo {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+}
+
+#directrelief-logo img {
+	height: 48px;
+}
+
+#calithon-logo {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+}
+
+#calithon-logo img {
+	height: 48px;
 }

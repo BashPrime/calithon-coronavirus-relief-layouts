@@ -1,22 +1,27 @@
 {
-    "name": "calithon-coronavirus-relief-layouts",
-    "version": "1.0.0",
-    "description": "Calithon Coronavirus Relief marathon layouts using NodeCG + Speedcontrol",
-    "homepage": "https://twitter.com/CalithonSR",
-    "author": "BashPrime",
-    "dependencies": {},
-    "nodecg": {
-      "compatibleRange": "^1.0.0",
-      "dependencies": [
-        "speedcontrol/nodecg-speedcontrol:>=0.9"
-      ],
-      "graphics": [
-        {
-          "file": "4x3-1player.html",
-          "width": 1920,
-          "height": 1080
-        }
-      ]
-    },
-    "license": "MIT"
-  }
+  "name": "calithon-coronavirus-relief-layouts",
+  "version": "1.0.0",
+  "description": "Calithon Coronavirus Relief marathon layouts using NodeCG + Speedcontrol",
+  "homepage": "https://twitter.com/CalithonSR",
+  "author": "BashPrime",
+  "dependencies": {},
+  "nodecg": {
+    "compatibleRange": "^1.0.0",
+    "dependencies": [
+      "speedcontrol/nodecg-speedcontrol:>=0.9"
+    ],
+    "graphics": [
+      {
+        "file": "4x3-1player.html",
+        "width": 1280,
+        "height": 720
+      },
+      {
+        "file": "4x3-2players.html",
+        "width": 1280,
+        "height": 720
+      }
+    ]
+  },
+  "license": "MIT"
+}

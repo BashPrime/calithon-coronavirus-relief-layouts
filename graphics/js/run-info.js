@@ -59,39 +59,47 @@ $(() => {
 		let gameEstimate = $('#estimate');
 
 		// This is where the information is received for the run we want to display.
-        // The "change" event is triggered when the current run is changed.
-        let runDataActiveRun = nodecg.Replicant('runDataActiveRun', speedcontrolBundle);
-        runDataActiveRun.on('change', (newVal, oldVal) => {
-            if (newVal)
-                updateSceneFields(newVal);
+		// The "change" event is triggered when the current run is changed.
+		let runDataActiveRun = nodecg.Replicant('runDataActiveRun', speedcontrolBundle);
+		runDataActiveRun.on('change', (newVal, oldVal) => {
+			if (newVal)
+				updateSceneFields(newVal);
 		});
-		
+
 		// Sets information on the pages for the run.
-        function updateSceneFields(runData) {
-            let currentTeamsData = getRunnersFromRunData(runData);
+		function updateSceneFields(runData) {
+			let currentTeamsData = getRunnersFromRunData(runData);
 
-            // Split year out from system platform, if present.
-            gameTitle.html(runData.game);
-            gameCategory.html(runData.category);
-            gameSystem.html(runData.system);
-            gameYear.html(runData.release);
-            gameEstimate.html(runData.estimate);
+			// Split year out from system platform, if present.
+			gameTitle.html(runData.game);
+			resizeToFit('#game-name');
+			gameCategory.html(runData.category);
+			gameSystem.html(runData.system);
+			gameYear.html(runData.release);
+			gameEstimate.html(runData.estimate);
 
-            // Set each player names and pronouns.
-            $('.runner-name').add('.pronouns').text('');
-            $('.runner-details').data('teamID', '');
-            let i = 0;
-            for (let team of currentTeamsData) {
-                for (let player of team.players) {
-                    i += 1;
-                    $('#runner-name' + i).text(player.name);
-                    $('#pronouns' + i).text(player.pronouns);
-                    $('#runner-details' + i).data('teamID', player.teamID);
-                }
-            }
+			// Set each player names and pronouns.
+			$('.runner-name').add('.pronouns').text('');
+			$('.runner-details').data('teamID', '');
+			let i = 0;
+			for (let team of currentTeamsData) {
+				for (let player of team.players) {
+					i += 1;
+					$('#runner-name' + i).text(player.name);
+					$('#pronouns' + i).text(player.pronouns);
+					$('#runner-details' + i).data('teamID', player.teamID);
+				}
+			}
 
-            // Fix pronoun wrapping for the current layout if needed.
-            FixSize('#game-name');
-        }
+			function resizeToFit(label) {		
+				const labelHeight = $(label).height();
+				const lineHeight = parseFloat($(label).css('line-height'));
+				if (labelHeight > lineHeight) {
+					$(label).fitText(1.5, { maxFontSize: '36pt' });
+				} else {
+					$(label).fitText(0);
+				}
+			}
+		}
 	}
 });
