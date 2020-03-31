@@ -1,3 +1,10 @@
+function getAutoWidth(selector) {
+	$(selector).css('width', 'auto');
+	const width = $(selector).innerWidth();
+	$(selector).css('width', '');
+	return width;
+}
+
 // Get team info from run data.
 function getRunnersFromRunData(runData) {
     let currentTeamsData = [];

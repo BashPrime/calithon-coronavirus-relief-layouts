@@ -11,7 +11,17 @@ body {
 	position: absolute;
 	width: var(--sidebar-container-width);
 	line-height: var(--sidebar-small-text-height);
-	text-align: center;
+	text-align: left;
+	top: 338px;
+	left: 5px;
+}
+
+#pronouns1 {
+	font-size: 30pt;
+	position: absolute;
+	width: calc(var(--sidebar-container-width) - 5px);
+	line-height: var(--sidebar-small-text-height);
+	text-align: right;
 	top: 338px;
 }
 
@@ -30,9 +40,30 @@ body {
 	font-size: 30pt;
 	width: var(--sidebar-container-width);
 	line-height: var(--sidebar-small-text-height);
-	text-align: center;
+	text-align: left;
 	position: absolute;
 	top: 65px;
+	left: 5px;
+}
+
+#estimate-container {
+	width: calc(var(--sidebar-container-width) - 5px);
+	line-height: var(--sidebar-small-text-height);
+	text-align: right;
+	position: absolute;
+	top: 65px;
+}
+
+#estimate-label {
+	display: inline-block;
+	height: 30pt;
+	vertical-align: middle;
+}
+
+#estimate {
+	display: inline-block;
+	font-size: 30pt;
+	vertical-align: middle;
 }
 
 #timer-label {

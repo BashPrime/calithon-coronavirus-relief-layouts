@@ -17,15 +17,15 @@ body {
 	width: 1280px;
 	height: 720px;
 
-	--omnibar-item-width: 210px;
+	--omnibar-directrelief-width: 215px;
 	--omnibar-item-height: 55px;
 	--omnibar-item-color: #004652;
 }
 
 #directrelief-logo {
-	width: var(--omnibar-item-width);
+	width: var(--omnibar-directrelief-width);
 	height: var(--omnibar-item-height);
-	line-height: var(--omnibar-item-height);
+	line-height: calc(var(--omnibar-item-height) - 4px);
 	background-color: var(--omnibar-item-color);
 	position: absolute;
 	bottom: 0;
@@ -41,7 +41,7 @@ body {
 #calithon-logo {
 	width: 198px;
 	height: var(--omnibar-item-height);
-	line-height: var(--omnibar-item-height);
+	line-height: calc(var(--omnibar-item-height) - 4px);
 	background-color: var(--omnibar-item-color);
 	text-align: right;
 	position: absolute;
@@ -55,6 +55,11 @@ body {
 	margin-right: 5px;
 }
 
-.timer_stopped {
-	color: #dfdfdf;
+#donation-total {
+	font-family: 'Economica Bold';
+	font-size: 36pt;
+	width: calc(var(--omnibar-directrelief-width) - 5px);
+	text-align: right;
+	position: absolute;
+	bottom: 0;
 }

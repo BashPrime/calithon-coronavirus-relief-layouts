@@ -28,11 +28,11 @@ $(() => {
 		let pronouns4 = $('#pronouns4');
 
 		// Apply to html
-		gameTitle.html('Title');
-		gameCategory.html('category');
-		gameSystem.html('system');
-		gameYear.html('1902');
-		gameEstimate.html('5:15:30');
+		gameTitle.html('Metroid Prime: Hunters');
+		gameCategory.html('All Items');
+		gameSystem.html('DS');
+		gameYear.html('2006');
+		gameEstimate.html('01:45:00');
 
 		name1.text('Mr_Shasta');
 		pronouns1.text('He/Him');
@@ -72,8 +72,11 @@ $(() => {
 
 			// Split year out from system platform, if present.
 			gameTitle.html(runData.game);
-			resizeToFit('#game-name');
+			runFitText('#game-name', gameNameWidth);
+
 			gameCategory.html(runData.category);
+			runFitText('#category', categoryNameWidth);
+
 			gameSystem.html(runData.system);
 			gameYear.html(runData.release);
 			gameEstimate.html(runData.estimate);
@@ -91,13 +94,12 @@ $(() => {
 				}
 			}
 
-			function resizeToFit(label) {		
-				const labelHeight = $(label).height();
-				const lineHeight = parseFloat($(label).css('line-height'));
-				if (labelHeight > lineHeight) {
-					$(label).fitText(1.5, { maxFontSize: '36pt' });
-				} else {
-					$(label).fitText(0);
+			function runFitText(selector, baseWidth) {
+				$(selector).css('font-size', '');
+				let selectorWidth = getAutoWidth(selector);
+
+				if (selectorWidth >= baseWidth) {
+					$(selector).fitText(selectorWidth / baseWidth);
 				}
 			}
 		}

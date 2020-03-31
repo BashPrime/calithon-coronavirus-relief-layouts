@@ -18,19 +18,24 @@
 
 	<script>
 		let isOffline = false;
+		let gameNameWidth = 396;
+		let categoryNameWidth = 225;
 	</script>
 </head>
 
 <body>
 	<!--Runner details.-->
 	<div class="runner-name" id="runner-name1"></div>
-	<!-- <div class="pronouns" id="pronouns1"></div> -->
+	<div class="pronouns" id="pronouns1"></div>
 
 	<!--Game details -->
 	<div id="game-name"></div>
 	<div id="category"></div>
-	<div id="estimate"></div>
 
+	<div id="estimate-container">
+		<img id="estimate-label" src="img/common/timer.svg" />
+		<div id="estimate"></div>
+	</div>
 
 	<!-- <div class="game-detail-container" id="platform-container">
 		<span class="game-detail-label" id="platform-label">System:</span>
@@ -45,14 +50,14 @@
 	</div> -->
 
 	<!-- Timer -->
-	<!-- <div id="timer-label"><img src="img/common/timer.svg" /></div> -->
 	<div id="timer"></div>
 
 	<!-- <span id="player"></span> -->
 
 	<!-- omnibar icons-->
-	<div id="directrelief-logo"><img src="img/common/DirectRelief_Logo_RGB.png" /></div>
-	<div id="calithon-logo"><img src="img/common/CalithonLogoB.png" /></div>
+	<div id="directrelief-logo"><img src="img/logos/DirectRelief_Logo_RGB.png" /></div>
+	<div id="donation-total">$25,356</div>
+	<div id="calithon-logo"><img src="img/logos/CalithonLogoA.png" /></div>
 </body>
 
 </html>
