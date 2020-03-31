@@ -93,15 +93,6 @@ $(() => {
 					$('#runner-details' + i).data('teamID', player.teamID);
 				}
 			}
-
-			function runFitText(selector, baseWidth) {
-				$(selector).css('font-size', '');
-				let selectorWidth = getAutoWidth(selector);
-
-				if (selectorWidth >= baseWidth) {
-					$(selector).fitText(selectorWidth / baseWidth);
-				}
-			}
 		}
 	}
 });

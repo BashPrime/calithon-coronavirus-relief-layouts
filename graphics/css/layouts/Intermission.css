@@ -1,0 +1,75 @@
+body {
+	background: url('../../img/layouts/Calithon_Intermission.png') no-repeat;
+	background-size: 1280px 720px;
+}
+
+#up-next-label {
+	font-size: 16pt;
+	width: 428px;
+	position: absolute;
+	top: 102px;
+	right: 0;
+}
+
+#up-next-game {
+	font-family: 'Economica Bold';
+	font-size: 36pt;
+	width: 420px;
+	line-height: 85px;
+	position: absolute;
+	top: 130px;
+	right: 0;
+}
+
+#up-next-info {
+	font-size: 24pt;
+	width: 375px;
+	line-height: 42px;
+	position: absolute;
+	top: 215px;
+	right: 0;
+}
+
+#on-deck-label {
+	font-size: 16pt;
+	width: 385px;
+	position: absolute;
+	top: 266px;
+	right: 0;
+}
+
+#on-deck-game1 {
+	font-size: 30pt;
+	width: 374px;
+	line-height: 62px;
+	position: absolute;
+	top: 293px;
+	right: 0;
+}
+
+#on-deck-info1 {
+	font-size: 24pt;
+	width: 330px;
+	line-height: 42px;
+	position: absolute;
+	top: 355px;
+	right: 0;
+}
+
+#on-deck-game2 {
+	font-size: 30pt;
+	width: 374px;
+	line-height: 62px;
+	position: absolute;
+	top: 423px;
+	right: 0;
+}
+
+#on-deck-info2 {
+	font-size: 24pt;
+	width: 330px;
+	line-height: 42px;
+	position: absolute;
+	top: 485px;
+	right: 0;
+}
