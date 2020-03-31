@@ -13,7 +13,6 @@ $(() => {
     // Run data.
     let runDataActiveRun = nodecg.Replicant('runDataActiveRun', speedcontrolBundle);
     let runDataArray = nodecg.Replicant('runDataArray', speedcontrolBundle);
-    let bids = nodecg.Replicant('bids', donationBundle);
 
     // Get the next X runs in the schedule.
     function getNextRuns(runData, amount) {
@@ -48,15 +47,16 @@ $(() => {
         loadOffline();
     }
     else {
-        loadFromSpeedControl();
+        // Wait for replicants to load before we do anything.
+        NodeCG.waitForReplicants(runDataActiveRun, runDataArray).then(loadFromSpeedControl);
     }
 
     function loadOffline() {
         let upNextGame = $('#up-next-game');
         let upNextInfo = $('#up-next-info');
 
-        upNextGame.html('Army of Two: The 40th Day');
-        upNextInfo.html('All Items - Mr_Shasta');
+        upNextGame.html('Metroid Prime Hunters');
+        upNextInfo.html('All Items | Mr_Shasta');
         runFitText('#up-next-game', upNextGameWidth);
 	    runFitText('#up-next-info', upNextInfoWidth);
 
@@ -67,20 +67,15 @@ $(() => {
         let onDeckInfo2 = $('#on-deck-info2');
 
         onDeckGame1.text('A Hat in Time');
-        onDeckInfo1.text('Any% - flarebear');
+        onDeckInfo1.text('Any% | flarebear');
         runFitText('#on-deck-game1', onDeckGameWidth);
 	    runFitText('#on-deck-info1', onDeckInfoWidth);
 
         onDeckGame2.text('Fire Emblem: Three Houses');
-        onDeckInfo2.text('Golden Deer - Claris');
+        onDeckInfo2.text('Golden Deer | Claris');
         runFitText('#on-deck-game2', onDeckGameWidth);
 	    runFitText('#on-deck-info2', onDeckInfoWidth);
     }
-
-    // (As of writing) triggered from a dashboard button and also when a run's timer ends
-    // nodecg.listenFor('forceRefreshIntermission', speedcontrolBundle, () => {
-    //     refreshNextRunsData(runDataActiveRun.value);
-    // });
 
     function loadFromSpeedControl() {
         // This is where the information is received for the run we want to display.
@@ -102,34 +97,45 @@ $(() => {
                 names.push(player.name);
             }
         }
+
         return names;
     }
 
     function refreshNextRunsData(currentRun) {
-        const numUpcoming = 3;
+        const numUpcoming = 2;
         let nextRuns = getNextRuns(currentRun, numUpcoming);
 
-        let comingUpGame = $('.coming-up-name');
-        let comingUpRunner = $('.coming-up-runner');
+        let upNextGame = $('#up-next-game');
+        let upNextInfo = $('#up-next-info');
 
         // Next up game.
-        comingUpGame.html(currentRun.game);
-        comingUpRunner.html(getNamesForRun(runDataActiveRun.value).join(', '));
+        upNextGame.html(currentRun.game);
+        let upNextNames = getNamesForRun(runDataActiveRun.value).join(', ');
+        let upNextInfoData = runDataActiveRun.value.category
+        ? runDataActiveRun.value.category + ' | ' + upNextNames
+        : upNextNames;
+        upNextInfo.html(upNextInfoData);
+
+        runFitText('#up-next-game', upNextGameWidth);
+	    runFitText('#up-next-info', upNextInfoWidth);
 
         // On deck games.
         let i = 0;
         for (let run of nextRuns) {
-            i += 1;
-            let onDeckGame = $(".on-deck-name" + i);
-            let onDeckRunner = $(".on-deck-runner" + i);
+            if (i >= numUpcoming) {
+                break;
+            }
+            let onDeckGame = $('#on-deck-game' + (i + 1));
+            let onDeckRunner = $('#on-deck-info' + (i + 1));
             onDeckGame.html(run.game).show();
-            onDeckRunner.html(getNamesForRun(run).join(', ')).show();
-        }
-
-        // Hide extra on deck games we don't need.
-        for (let j = i + 1; j <= numUpcoming; j++) {
-            $(".on-deck-name" + j).hide();
-            $(".on-deck-runner" + j).hide();
+            let onDeckNames = getNamesForRun(run).join(', ');
+            let onDeckInfo = run.category
+                ? run.category + ' | ' + onDeckNames
+                : onDeckNames;
+            onDeckRunner.html(onDeckInfo).show();
+            runFitText('#on-deck-game' + (i + 1), onDeckGameWidth);
+            runFitText('#on-deck-info' + (i + 1), onDeckInfoWidth);
+            i += 1;
         }
     }
 });
