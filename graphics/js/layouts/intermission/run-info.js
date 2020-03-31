@@ -98,10 +98,18 @@ $(() => {
             }
         }
 
-        return names;
+        return names.length < 4 ? names : ['Multiple Runners'];
     }
 
     function refreshNextRunsData(currentRun) {
+        // Clear fields
+        $('#up-next-game').html('');
+        $('#up-next-info').html('');
+        $('#on-deck-game1').html('');
+        $('#on-deck-info1').html('');
+        $('#on-deck-game2').html('');
+        $('#on-deck-info2').html('');
+
         const numUpcoming = 2;
         let nextRuns = getNextRuns(currentRun, numUpcoming);
 
@@ -110,11 +118,7 @@ $(() => {
 
         // Next up game.
         upNextGame.html(currentRun.game);
-        let upNextNames = getNamesForRun(runDataActiveRun.value).join(', ');
-        let upNextInfoData = runDataActiveRun.value.category
-        ? runDataActiveRun.value.category + ' | ' + upNextNames
-        : upNextNames;
-        upNextInfo.html(upNextInfoData);
+        upNextInfo.html(getNamesForRun(runDataActiveRun.value).join(', '));
 
         runFitText('#up-next-game', upNextGameWidth);
 	    runFitText('#up-next-info', upNextInfoWidth);
@@ -128,11 +132,7 @@ $(() => {
             let onDeckGame = $('#on-deck-game' + (i + 1));
             let onDeckRunner = $('#on-deck-info' + (i + 1));
             onDeckGame.html(run.game).show();
-            let onDeckNames = getNamesForRun(run).join(', ');
-            let onDeckInfo = run.category
-                ? run.category + ' | ' + onDeckNames
-                : onDeckNames;
-            onDeckRunner.html(onDeckInfo).show();
+            onDeckRunner.html(getNamesForRun(run).join(', ')).show();
             runFitText('#on-deck-game' + (i + 1), onDeckGameWidth);
             runFitText('#on-deck-info' + (i + 1), onDeckInfoWidth);
             i += 1;
