@@ -121,7 +121,7 @@ $(() => {
         upNextInfo.html(getNamesForRun(runDataActiveRun.value).join(', '));
 
         runFitText('#up-next-game', upNextGameWidth);
-	    runFitText('#up-next-info', upNextInfoWidth);
+	    runFitText('#up-next-info', upNextInfoWidth * 0.8);
 
         // On deck games.
         let i = 0;
@@ -134,7 +134,7 @@ $(() => {
             onDeckGame.html(run.game).show();
             onDeckRunner.html(getNamesForRun(run).join(', ')).show();
             runFitText('#on-deck-game' + (i + 1), onDeckGameWidth);
-            runFitText('#on-deck-info' + (i + 1), onDeckInfoWidth);
+            runFitText('#on-deck-info' + (i + 1), onDeckInfoWidth * 0.8);
             i += 1;
         }
     }
