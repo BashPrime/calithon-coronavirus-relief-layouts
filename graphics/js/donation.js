@@ -2,6 +2,8 @@
 $(() => {
 	const TILTIFY_CAMPAIGN_ID = 43898; // id for calithon covid relief cmpaign
 	const TILTIFY_AUTH_TOKEN = null;
+	let countUp;
+	let currentTotal;
 
 	if (isOffline) {
 		loadOffline();
@@ -16,7 +18,7 @@ $(() => {
 	}
 
 	function loadOffline() {
-		$('#donation-total').html('$12,345');
+		$('#donation-total').html('$123,456.78');
 	}
 
 	function loadFromTiltifyApi() {
@@ -28,12 +30,25 @@ $(() => {
 			},
 			dataType: 'json',
 			success: (response) => {
-				const formatter = new Intl.NumberFormat('en-US', {
-					style: 'currency',
-					currency: 'USD',
-				});
-				$('#donation-total').html(formatter.format(response.data.totalAmountRaised));
+				const newTotal = response.data.totalAmountRaised;
+
+				// Only update if we get a new value from the API
+				if (currentTotal !== newTotal) {
+					currentTotal = newTotal;
+					handleCountUp(currentTotal);
+				}
 			}
 		});
+	}
+
+	function handleCountUp(amount) {
+		if (!countUp) {
+			countUp = new CountUp('donation-total', amount, amount, 2, 0.75, {
+				prefix: '$'
+			});
+			countUp.start();
+		} else {
+			countUp.update(amount);
+		}
 	}
 });
