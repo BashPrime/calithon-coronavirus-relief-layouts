@@ -32,7 +32,7 @@ body {
 
 #directrelief-logo {
 	display: inline-block;
-	margin-right: 1rem;
+	margin-right: 1.5rem;
 	height: var(--omnibar-item-height);
 	vertical-align: middle;
 }
