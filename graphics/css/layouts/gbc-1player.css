@@ -1,0 +1,83 @@
+body {
+	background: url('../../img/layouts/Calithon_GBC.png') no-repeat;
+
+	--sidebar-container-width: 541px;
+	--sidebar-small-text-height: 45px;
+	--sidebar-large-text-height: 65px;
+}
+
+#runner-container1 {
+	width: var(--sidebar-container-width);
+	line-height: var(--sidebar-small-text-height);
+	position: absolute;
+	top: 255px;
+}
+
+#runner-name1 {
+	font-size: 30pt;
+	float: left;
+	margin-left: 0.5rem;
+	vertical-align: middle;
+}
+
+#pronouns1 {
+	font-size: 18pt;
+	float: right;
+	margin-right: 0.5rem;
+	vertical-align: middle;
+	margin-right: 0.5rem;
+}
+
+#game-name {
+	font-family: 'Economica Bold';
+	font-size: 36pt;
+	overflow: hidden;
+	width: var(--sidebar-container-width);
+	line-height: var(--sidebar-large-text-height);
+	text-align: center;
+	position: absolute;
+	top: 0;
+}
+
+#info-container {
+	width: var(--sidebar-container-width);
+	line-height: var(--sidebar-small-text-height);
+	position: absolute;
+	top: 65px;
+}
+
+#category {
+	font-size: 30pt;
+	float: left;
+	vertical-align: middle;
+	margin-left: 0.5rem;
+}
+
+#estimate-container {
+	float: right;
+	vertical-align: middle;
+	margin-right: 0.5rem;
+}
+
+#estimate-label {
+	display: inline-block;
+	height: 24pt;
+	vertical-align: middle;
+}
+
+#estimate {
+	display: inline-block;
+	font-size: 24pt;
+	margin-right: 0.5rem;
+	vertical-align: middle;
+}
+
+#timer {
+	font-family: 'Economica Bold';
+	font-size: 48pt;
+	width: var(--sidebar-container-width);
+	line-height: var(--sidebar-large-text-height);
+	text-align: center;
+	position: absolute;
+	top: 300px;
+}
