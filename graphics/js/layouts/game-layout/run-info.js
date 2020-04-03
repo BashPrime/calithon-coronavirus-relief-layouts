@@ -89,6 +89,7 @@ $(() => {
 				for (let player of team.players) {
 					i += 1;
 					$('#runner-name' + i).text(player.name);
+					runFitText('#runner-name' + i, runnerNameWidth);
 					$('#pronouns' + i).text(player.pronouns);
 					$('#runner-details' + i).data('teamID', player.teamID);
 				}

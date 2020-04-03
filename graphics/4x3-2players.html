@@ -11,49 +11,54 @@
 	<!-- JavaScript -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
+	<script src="js/jquery.fittext.js"></script>
+	<script src="js/countUp.min.js"></script>
 	<script src="js/utils.js"></script>
-	<script src="js/run-info.js"></script>
+	<script src="js/layouts/game-layout/run-info.js"></script>
 	<script src="js/timer.js"></script>
+	<script src="js/donation.js"></script>
 
 	<script>
 		let isOffline = false;
+		let gameNameWidth = 515;
+		let categoryNameWidth = 311;
+		let runnerNameWidth = 350;
 	</script>
 </head>
 
 <body>
 	<!--Runner details.-->
-	<div class="runner-name" id="runner-name1"></div>
-	<div class="pronouns" id="pronouns1"></div>
+	<div class="runner-container" id="runner-container1">
+		<div class="runner-name" id="runner-name1"></div>
+		<div class="pronouns" id="pronouns1"></div>
+	</div>
+
+	<div class="runner-container" id="runner-container2">
+		<div class="runner-name" id="runner-name2"></div>
+		<div class="pronouns" id="pronouns2"></div>
+	</div>
 
 	<!--Game details -->
 	<div id="game-name"></div>
-	<div id="category"></div>
-	<div id="platform"></div>
-	<div id="platform"></div>
-	<div id="estimate"></div>
 
-
-	<!-- <div class="game-detail-container" id="platform-container">
-		<span class="game-detail-label" id="platform-label">System:</span>
+	<!-- Game Info -->
+	<div id="info-container">
+		<div id="category"></div>
+		<div id="estimate-container">
+			<img id="estimate-label" src="img/common/timer.svg" />
+			<div id="estimate"></div>
+		</div>
 	</div>
-	<div class="game-detail-container" id="year-container">
-		<span class="game-detail-label" id="year-label">Released:</span>
-		<span class="game-detail" id="year"></span>
-	</div>
-	<div class="game-detail-container" id="estimate-container">
-		<span class="game-detail-label" id="estimate-label">Estimate:</span>
-		<span class="game-detail" id="estimate"></span>
-	</div> -->
 
 	<!-- Timer -->
-	<!-- <div id="timer-label"><img src="img/common/timer.svg" /></div> -->
 	<div id="timer"></div>
 
-	<!-- <span id="player"></span> -->
-
 	<!-- omnibar icons-->
-	<div id="directrelief-logo"><img src="img/common/DirectRelief_Logo_RGB.png" /></div>
-	<div id="calithon-logo"><img src="img/common/CalithonLogoB.png" /></div>
+	<div id="donation-container">
+		<div id="directrelief-logo"><img src="img/logos/DirectRelief_Logo_RGB.png" /></div>
+		<div id="donation-total"></div>
+	</div>
+	<div id="calithon-logo"><img src="img/logos/CalithonLogoA.png" /></div>
 </body>
 
 </html>
