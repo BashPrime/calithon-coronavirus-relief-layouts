@@ -37,6 +37,16 @@
         "height": 720
       },
       {
+        "file": "gba.html",
+        "width": 1280,
+        "height": 720
+      },
+      {
+        "file": "gbc-2players.html",
+        "width": 1280,
+        "height": 720
+      },
+      {
         "file": "Intermission.html",
         "width": 1280,
         "height": 720
