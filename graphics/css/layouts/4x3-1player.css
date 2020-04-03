@@ -6,23 +6,26 @@ body {
 	--sidebar-large-text-height: 64px;
 }
 
-#runner-name1 {
-	font-size: 30pt;
-	position: absolute;
+#runner-container1 {
 	width: var(--sidebar-container-width);
 	line-height: var(--sidebar-small-text-height);
-	text-align: left;
+	position: absolute;
 	top: 338px;
-	left: 5px;
+}
+
+#runner-name1 {
+	font-size: 30pt;
+	float: left;
+	margin-left: 0.5rem;
+	vertical-align: middle;
 }
 
 #pronouns1 {
-	font-size: 30pt;
-	position: absolute;
-	width: calc(var(--sidebar-container-width) - 5px);
-	line-height: var(--sidebar-small-text-height);
-	text-align: right;
-	top: 338px;
+	font-size: 18pt;
+	float: right;
+	margin-right: 0.5rem;
+	vertical-align: middle;
+	margin-right: 0.5rem;
 }
 
 #game-name {
@@ -36,48 +39,36 @@ body {
 	top: 0;
 }
 
-#category {
-	font-size: 30pt;
+#info-container {
 	width: var(--sidebar-container-width);
 	line-height: var(--sidebar-small-text-height);
-	text-align: left;
 	position: absolute;
 	top: 65px;
-	left: 5px;
+}
+
+#category {
+	font-size: 30pt;
+	float: left;
+	vertical-align: middle;
+	margin-left: 0.5rem;
 }
 
 #estimate-container {
-	width: calc(var(--sidebar-container-width) - 5px);
-	line-height: var(--sidebar-small-text-height);
-	text-align: right;
-	position: absolute;
-	top: 65px;
+	float: right;
+	vertical-align: middle;
+	margin-right: 0.5rem;
 }
 
 #estimate-label {
 	display: inline-block;
-	height: 30pt;
+	height: 18pt;
 	vertical-align: middle;
 }
 
 #estimate {
 	display: inline-block;
-	font-size: 30pt;
-	vertical-align: middle;
-}
-
-#timer-label {
-	background-color: #004652;
-	width: 64px;
-	height: 64px;
-	line-height: 64px;
-	text-align: center;
-	position: absolute;
-	top: 383px;
-}
-
-#timer-label img {
-	height: 48px;
+	font-size: 18pt;
+	margin-right: 0.5rem;
 	vertical-align: middle;
 }
 

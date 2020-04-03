@@ -21,40 +21,32 @@
 	<script>
 		let isOffline = false;
 		let gameNameWidth = 396;
-		let categoryNameWidth = 225;
+		let categoryNameWidth = 230;
+		let runnerNameWidth = 250;
 	</script>
 </head>
 
 <body>
 	<!--Runner details.-->
-	<div class="runner-name" id="runner-name1"></div>
-	<div class="pronouns" id="pronouns1"></div>
+	<div id="runner-container1">
+		<div class="runner-name" id="runner-name1"></div>
+		<div class="pronouns" id="pronouns1"></div>
+	</div>
 
 	<!--Game details -->
 	<div id="game-name"></div>
-	<div id="category"></div>
 
-	<div id="estimate-container">
-		<img id="estimate-label" src="img/common/timer.svg" />
-		<div id="estimate"></div>
+	<!-- Game Info -->
+	<div id="info-container">
+		<div id="category"></div>
+		<div id="estimate-container">
+			<img id="estimate-label" src="img/common/timer.svg" />
+			<div id="estimate"></div>
+		</div>
 	</div>
-
-	<!-- <div class="game-detail-container" id="platform-container">
-		<span class="game-detail-label" id="platform-label">System:</span>
-	</div>
-	<div class="game-detail-container" id="year-container">
-		<span class="game-detail-label" id="year-label">Released:</span>
-		<span class="game-detail" id="year"></span>
-	</div>
-	<div class="game-detail-container" id="estimate-container">
-		<span class="game-detail-label" id="estimate-label">Estimate:</span>
-		<span class="game-detail" id="estimate"></span>
-	</div> -->
 
 	<!-- Timer -->
 	<div id="timer"></div>
-
-	<!-- <span id="player"></span> -->
 
 	<!-- omnibar icons-->
 	<div id="donation-container">

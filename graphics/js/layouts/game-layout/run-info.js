@@ -1,5 +1,10 @@
 'use strict';
 $(() => {
+	const pronouns = [
+		'He/Him',
+		'She/Her'
+	];
+
 	if (isOffline) {
 		loadOffline();
 	} else {
@@ -87,11 +92,16 @@ $(() => {
 			let i = 0;
 			for (let team of currentTeamsData) {
 				for (let player of team.players) {
+					$('#runner-name' + (i + 1)).text(player.name);
+					runFitText('#runner-name' + (i + 1), runnerNameWidth);
+
+					// Set pronouns
+					if (pronouns[i]) {
+						$('#pronouns' + (i + 1)).text(pronouns[i]);
+					}
+
+					$('#runner-details' + (i + 1)).data('teamID', player.teamID);
 					i += 1;
-					$('#runner-name' + i).text(player.name);
-					runFitText('#runner-name' + i, runnerNameWidth);
-					$('#pronouns' + i).text(player.pronouns);
-					$('#runner-details' + i).data('teamID', player.teamID);
 				}
 			}
 		}
