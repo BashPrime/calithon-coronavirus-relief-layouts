@@ -1,14 +1,13 @@
 body {
-	background: url('../../img/layouts/Calithon_GBB.png') no-repeat;
-	background-size: 1280px 720px;
+	background: url('../../img/layouts/Calithon_16x9B.png') no-repeat;
 
 	--runner-container-width: 439px;
 	--timer-container-width: 396px;
-	--large-container-width: 519px;
+	--large-container-width: 411px;
 
 	--small-container-height: 45px;
 
-	--row-1-top: 481px;
+	--row-1-top: 361px;
 }
 
 .runner-container {
@@ -60,19 +59,17 @@ body {
 	font-family: 'Economica Bold';
 	font-size: 40pt;
 	width: var(--large-container-width);
-	line-height: 88px;
+	line-height: 65px;
 	text-align: center;
 	position: absolute;
-	top: 529px;
-	left: 380px;
+	top: 480px;
 }
 
 #info-container {
 	width: var(--large-container-width);
-	line-height: var(--small-container-height);
+	line-height: 43px;
 	position: absolute;
-	top: 616px;
-	left: 380px;
+	top: 545px;
 }
 
 #category {
@@ -90,13 +87,13 @@ body {
 
 #estimate-label {
 	display: inline-block;
-	height: 24pt;
+	height: 18pt;
 	vertical-align: middle;
 }
 
 #estimate {
 	display: inline-block;
-	font-size: 24pt;
+	font-size: 18pt;
 	margin-right: 0.5rem;
 	vertical-align: middle;
 }

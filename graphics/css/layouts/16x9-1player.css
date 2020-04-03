@@ -34,7 +34,6 @@ body {
 #game-name {
 	font-family: 'Economica Bold';
 	font-size: 36pt;
-	overflow: hidden;
 	width: var(--container-width);
 	line-height: var(--large-container-height);
 	text-align: center;

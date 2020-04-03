@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+
+	<!-- CSS -->
+	<link rel="stylesheet" href="css/common.css" />
+	<link rel="stylesheet" href="css/layouts/16x9-2players.css" />
+
+	<!-- JavaScript -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+	<script src="js/jquery.fittext.js"></script>
+	<script src="js/countUp.min.js"></script>
+	<script src="js/utils.js"></script>
+	<script src="js/layouts/game-layout/run-info.js"></script>
+	<script src="js/timer.js"></script>
+	<script src="js/donation.js"></script>
+
+	<script>
+		let isOffline = false;
+		let gameNameWidth = 411;
+		let categoryNameWidth = 245;
+		let runnerNameWidth = 311;
+	</script>
+</head>
+
+<body>
+	<!--Runner details.-->
+	<div class="runner-container" id="runner-container1">
+		<div class="runner-name" id="runner-name1"></div>
+		<div class="pronouns" id="pronouns1"></div>
+	</div>
+
+	<div class="runner-container" id="runner-container2">
+		<div class="runner-name" id="runner-name2"></div>
+		<div class="pronouns" id="pronouns2"></div>
+	</div>
+
+	<!--Game details -->
+	<div id="game-name"></div>
+
+	<!-- Game Info -->
+	<div id="info-container">
+		<div id="category"></div>
+		<div id="estimate-container">
+			<img id="estimate-label" src="img/common/timer.svg" />
+			<div id="estimate"></div>
+		</div>
+	</div>
+
+	<!-- Timer -->
+	<div id="timer"></div>
+
+	<!-- omnibar icons-->
+	<div id="donation-container">
+		<div id="directrelief-logo"><img src="img/logos/DirectRelief_Logo_RGB.png" /></div>
+		<div id="donation-total"></div>
+	</div>
+	<div id="calithon-logo"><img src="img/logos/CalithonLogoA.png" /></div>
+</body>
+
+</html>
